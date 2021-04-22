@@ -1,6 +1,6 @@
 # Streamlit CSS Button
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/andfanilo/streamlit-css-button/app.py)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/andfanilo/streamlit-css-button/example/app.py)
 
 Pimp your button with CSS!
 
