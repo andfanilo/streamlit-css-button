@@ -15,13 +15,17 @@ button.onclick = () => {
 const onRender = (event: Event) => {
   const data = (event as CustomEvent<RenderData>).detail;
 
-  // Disable our button while rendering
   button.disabled = data.disabled;
 
   let label = data.args["label"];
   button.textContent = label;
 
-  let style = { button: data.args["style"] };
+  let style = {
+    button: {
+      ...data.args["style"],
+      "&:hover": data.args["hover_style"],
+    },
+  };
   const { classes } = jss.createStyleSheet(style).attach();
   button.className = classes.button;
 
