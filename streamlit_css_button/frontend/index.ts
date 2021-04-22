@@ -1,6 +1,10 @@
 import "./index.css";
 
+import jss from "jss";
+import preset from "jss-preset-default";
 import { Streamlit, RenderData } from "streamlit-component-lib";
+
+jss.setup(preset());
 
 const button = document.body.appendChild(document.createElement("button"));
 
@@ -16,6 +20,10 @@ const onRender = (event: Event) => {
 
   let label = data.args["label"];
   button.textContent = label;
+
+  let style = { button: data.args["style"] };
+  const { classes } = jss.createStyleSheet(style).attach();
+  button.className = classes.button;
 
   Streamlit.setFrameHeight();
 };

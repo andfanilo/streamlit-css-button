@@ -55,7 +55,8 @@ streamlit run app.py
 ## Why this package?
 
 - There are several people who want to pimp their Streamlit button.
-- I wanted to try [Parcel](https://parceljs.org/) to build the smallest component codebase. Also it comes with native Typescript support.
+- I wanted to try [Parcel](https://parceljs.org/) to build the smallest component codebase. It comes with native Typescript support.
+- It's also a good time to try CSS-in-JS. [JSS](https://cssinjs.org/) seemed super easy to setup in vanilla Typescript.
 
 ## References
 

@@ -1,4 +1,6 @@
 import os
+from dataclasses import asdict
+from dataclasses import dataclass
 
 import streamlit.components.v1 as components
 
@@ -15,8 +17,15 @@ else:
     _st_css_button = components.declare_component("streamlit_css_button", path=build_dir)
 
 
+@dataclass
+class css_properties:
+    color: str = "black"
+    backgroundColor: str = "green"
+
+
 def st_css_button(
     label: str,
+    css_properties: css_properties,
     key=None,
 ):
     """Create a button. Pimp with CSS.
@@ -25,6 +34,7 @@ def st_css_button(
     """
     return _st_css_button(
         label=label,
+        style=asdict(css_properties),
         key=key,
         default=False,
     )
