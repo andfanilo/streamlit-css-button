@@ -30,10 +30,13 @@ class css_properties:
     cursor: str = None
     fontFamily: str = None
     fontSize: str = None
+    fontWeight: str = None
     margin: str = None
     padding: str = None
     textDecoration: str = None
+    boxShadow: str = None
     textShadow: str = None
+    transition: str = None
 
 
 def asdict(o, skip_empty=True):
@@ -44,6 +47,7 @@ def st_css_button(
     label: str,
     css_properties: css_properties,
     hover_properties: css_properties,
+    active_properties: css_properties,
     key=None,
 ):
     """Create a button. Pimp with CSS.
@@ -54,6 +58,7 @@ def st_css_button(
         label=label,
         style=asdict(css_properties),
         hover_style=asdict(hover_properties),
+        active_style=asdict(active_properties),
         key=key,
         default=False,
     )
