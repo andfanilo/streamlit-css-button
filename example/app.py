@@ -7,7 +7,7 @@ st.title("Pimp my button!")
 with st.echo("below"):
     if st_css_button(
         "Launch balloons!",
-        css_properties(
+        css_properties=css_properties(
             height="50px",
             width="200px",
             color="red",
@@ -24,11 +24,11 @@ with st.echo("below"):
             textShadow="0px 1px 0px #2f6627",
             transition="width 2s, height 2s, transform 2s",
         ),
-        css_properties(
+        hover_properties=css_properties(
             backgroundImage="linear-gradient(to bottom, #3498db, #2980b9)",
             fontWeight="bold",
             width="300px",
         ),
-        css_properties(backgroundColor="green",),
+        active_properties=css_properties(backgroundColor="green",),
     ):
         st.balloons()

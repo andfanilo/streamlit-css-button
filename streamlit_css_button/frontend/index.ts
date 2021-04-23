@@ -24,6 +24,7 @@ const onRender = (event: Event) => {
     button: {
       ...data.args["style"],
       "&:hover": data.args["hover_style"],
+      "&:focus": data.args["focus_style"],
       "&:active": data.args["active_style"],
     },
   };

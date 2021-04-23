@@ -22,10 +22,15 @@ else:
 class css_properties:
     height: str = None
     width: str = None
+    display: str = None
+    alignItems: str = None 
+    justifyContent: str = None
+    lineHeight: str = None
     color: str = None
     backgroundImage: str = None
     backgroundColor: str = None
     border: str = None
+    outline: str = None
     borderRadius: str = None
     cursor: str = None
     fontFamily: str = None
@@ -47,6 +52,7 @@ def st_css_button(
     label: str,
     css_properties: css_properties,
     hover_properties: css_properties,
+    focus_properties: css_properties,
     active_properties: css_properties,
     key=None,
 ):
@@ -58,6 +64,7 @@ def st_css_button(
         label=label,
         style=asdict(css_properties),
         hover_style=asdict(hover_properties),
+        focus_style=asdict(focus_properties),
         active_style=asdict(active_properties),
         key=key,
         default=False,
