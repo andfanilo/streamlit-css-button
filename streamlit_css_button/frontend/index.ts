@@ -7,9 +7,11 @@ import { Streamlit, RenderData } from "streamlit-component-lib";
 jss.setup(preset());
 
 const button = document.body.appendChild(document.createElement("button"));
+let state = "idle";
 
 button.onclick = () => {
   Streamlit.setComponentValue(true);
+  state = "clicked";
 };
 
 const onRender = (event: Event) => {
@@ -32,6 +34,14 @@ const onRender = (event: Event) => {
   button.className = classes.button;
 
   Streamlit.setFrameHeight();
+
+  if (state === "clicked") {
+    state = "reset";
+  } else if (state === "reset") {
+    Streamlit.setComponentValue(false);
+    state = "idle";
+  }
+  
 };
 
 Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, onRender);
