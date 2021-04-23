@@ -18,7 +18,7 @@ with st.echo("below"):
             fontFamily="Arial",
             fontSize="18px",
             padding="6px 13px",
-            margin="0.1em",
+            margin="0 0 12px 0",
             textDecoration="none",
             boxShadow="7px 10px 0px 0px #3dc21b",
             textShadow="0px 1px 0px #2f6627",
