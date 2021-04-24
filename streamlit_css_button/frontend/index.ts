@@ -10,6 +10,7 @@ const button = document.body.appendChild(document.createElement("button"));
 let state = "idle";
 
 button.onclick = () => {
+  console.log("clicked on", button.textContent);
   Streamlit.setComponentValue(true);
   state = "clicked";
 };
@@ -21,6 +22,7 @@ const onRender = (event: Event) => {
 
   let label = data.args["label"];
   button.textContent = label;
+  console.log("render", button.textContent, state);
 
   let style = {
     button: {
@@ -28,6 +30,7 @@ const onRender = (event: Event) => {
       "&:hover": data.args["hover_style"],
       "&:focus": data.args["focus_style"],
       "&:active": data.args["active_style"],
+      "&:disabled": data.args["disabled_style"],
     },
   };
   const { classes } = jss.createStyleSheet(style).attach();
@@ -41,7 +44,6 @@ const onRender = (event: Event) => {
     Streamlit.setComponentValue(false);
     state = "idle";
   }
-  
 };
 
 Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, onRender);

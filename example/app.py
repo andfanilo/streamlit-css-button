@@ -6,20 +6,23 @@ from streamlit_css_button import st_button_style_focus
 from streamlit_css_button import st_button_style_hover
 from streamlit_css_button import st_css_button
 
-st.set_page_config(page_title="Pimp my button!", page_icon=":art:")
+st.set_page_config(page_title="Pimp my button!", page_icon=":art:", layout="wide")
 
 st.title("Pimp my button!")
 st.markdown("Here are 3 style examples, build your own in the sidebar!")
 
-c1, c2, c3 = st.beta_columns(3)
+c1, c2, c3, c4 = st.beta_columns(4)
 
-with c1:
+with c1: 
+    st.button("I'm a Streamlit button!")
+
+with c2:
     st_css_button(
-        "This button does nothing", css_properties(),
+        "This button does nothing", css_properties()
     )
 
 
-with c2:
+with c3:
     if st_css_button(
         "Write something nice!",
         st_button_style,
@@ -29,7 +32,7 @@ with c2:
     ):
         st.markdown("Happy Streamlitin' :balloon:")
 
-with c3:
+with c4:
     if st_css_button(
         "Launch balloons!",
         css_properties=css_properties(
@@ -55,5 +58,6 @@ with c3:
             width="200px",
         ),
         active_properties=css_properties(backgroundColor="green",),
+        disabled_properties=css_properties(backgroundColor="black",)
     ):
         st.balloons()

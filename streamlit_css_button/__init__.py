@@ -94,6 +94,7 @@ def st_css_button(
     hover_properties: css_properties = None,
     focus_properties: css_properties = None,
     active_properties: css_properties = None,
+    disabled_properties: css_properties = None,
     key=None,
 ):
     """Create a button. Pimp with CSS.
@@ -106,6 +107,7 @@ def st_css_button(
         hover_style=__asdict(hover_properties),
         focus_style=__asdict(focus_properties),
         active_style=__asdict(active_properties),
-        key=key,
+        disabled_style=__asdict(disabled_properties),
+        key=label if key is None else key,
         default=False,
     )
