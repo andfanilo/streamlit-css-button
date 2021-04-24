@@ -4,9 +4,9 @@
   "description": "Packaging the Button code",
   "main": "index.js",
   "scripts": {
-    "clean": "rm dist/bundle.js",
+    "clean": "rm build/",
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --out-dir build/"
   },
   "author": "Fanilo ANDRIANASOLO",
   "license": "MIT",
